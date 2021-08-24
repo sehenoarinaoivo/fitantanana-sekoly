@@ -134,8 +134,8 @@
           while($result=$ins->fetch()){
 
             $get_user_image->execute(array(
-                              $result['id']
-                            ));
+              $result['id']
+            ));
             $user_image = $get_user_image->fetch()[0];
 
             //Testons s'il a une image ou pas !!...
@@ -153,7 +153,7 @@
             <td><?php echo $result['nom_prenom'] ?></td>
             <td> <?php echo $result['class']?> </td>
             <td>
-              <a href="profile.php?id=id_profile">
+              <a href="profile.php?id=<?php echo $result['id'] ?>">
                 <i class="fas fa-user-graduate" title="profile"></i>
               </a>
             </td>
@@ -171,17 +171,17 @@
               <a href="/admin/bulletin/student/142"><i class="fa fa-file"></i></a>
             </td>
             <td>
-              <a class="btn btn-success" href="/admin/student/142/edit"><i style="color:black;" class="fa fa-edit"></i></a>
+              <a class="btn btn-success" href="student_edit.php?id_update=<?php echo $result['id'] ?>"><i class="fa fa-edit"></i></a>
               <a class="btn btn-danger" onclick="return confirm(&#39;delete&#39;)" href="/admin/student/142/delete">
               <i class="fa fa-trash"></i>
               </a>
             </td>
-          
+
           </tr>
           <?php } ?>
-         
+
           <tr role="row">
-            
+
             <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 84px;">#</th>
             <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Full name: activate to sort column ascending" style="width: 181px;">Full name</th>
             <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="class: activate to sort column ascending" style="width: 153px;">Class</th>

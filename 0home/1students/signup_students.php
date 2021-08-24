@@ -36,7 +36,7 @@
             "phone"=>$_POST["phone"],
             "pathimages"=>htmlspecialchars($pathimages),
     ));
-    header("Location: Nouvel_etudiant.php");
+    // header("Location: Nouvel_etudiant.php");
     ?>
 
                 
